@@ -19,7 +19,7 @@ const renderList = async () =>{
         const img = document.createElement("img");
         img.src = `${element.image}`;
         img.alt = "imagem post"
-    
+        
         const h2 = document.createElement("h2");
         h2.innerText = `${element.title}`;
     
@@ -27,12 +27,18 @@ const renderList = async () =>{
         p.innerText = `${element.description}`;
     
         const span = document.createElement("span");
-        span.setAttribute("data-patch", `${element.id}`)
+        span.id =`${element.id}`;
         span.innerText = "Acessar conteúdo";
+
+        span.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            localStorage.setItem("@postId:", `${e.target.id}`);
+            window.location.replace("../../src/pages/post.html")
+        })
         
         li.append(img, h2, p, span);
         ul.append(li)
-        console.log(ul)
     });
     
 }
