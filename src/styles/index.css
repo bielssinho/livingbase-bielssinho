@@ -124,6 +124,7 @@ main{
 
 .post > img{
     width: 100%;
+    height: 60%;
 }
 
 .post > h2{
@@ -146,6 +147,7 @@ main{
 }
 
 .description-footer{
+    position: static;
     width: 100vw;
     height: 400px;
     background-color: var(--color-grey-100);
