@@ -90,7 +90,8 @@ nav > a{
 
 .post{
     width: 100%;
-    max-height: 500px;
+    max-height: 900px;
+    height: 500px;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -110,6 +111,8 @@ nav > a{
 }
 
 .content-post > p{
+    width: 100%;
+    height: 100%;
     font-weight: 400;
     font-size: var(--font-size-4);
 }

@@ -33,7 +33,7 @@ const renderList = async () =>{
         span.addEventListener("click", (e) => {
             e.preventDefault();
 
-            localStorage.setItem("@postId:", `${e.target.id}`);
+            localStorage.setItem("@postId:", JSON.stringify(`${e.target.id}`));
             window.location.replace("../../src/pages/post.html")
         })
         
