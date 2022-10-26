@@ -139,6 +139,7 @@ main{
 
 .post > span{
     color: #099268;
+    cursor: pointer;
 }
 
 .div-description > img{
