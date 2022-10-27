@@ -98,11 +98,11 @@ main{
     background-color: var(--color-grey-600);
     border-radius: 32px;
     padding: 0px 22px 0px 22px ; 
+    cursor: pointer;
 }
 
 .posts{
     width: 70%;
-    max-height: 700px;
     margin: 0 auto;
 }
 
@@ -150,7 +150,7 @@ main{
 .description-footer{
     position: static;
     width: 100vw;
-    height: 400px;
+    height: 200px;
     background-color: var(--color-grey-100);
     display: flex;
     align-items: center;

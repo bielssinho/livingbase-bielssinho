@@ -16,6 +16,22 @@ async function getNewsById(id){
     }
 }
 
+async function getNewsNotice(page){
+    try{
+        const request = await fetch(baseUrl + `?page=${page}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const response = await request.json()
+        
+        return response
+    }catch(err){
+        console.log(err)
+    }
+}
+
 async function getNews(){
     try{
         const request = await fetch(baseUrl, {
@@ -26,7 +42,7 @@ async function getNews(){
         });
         const response = await request.json()
         
-        return response.news
+        return response
     }catch(err){
         console.log(err)
     }
@@ -34,5 +50,6 @@ async function getNews(){
 
 export{
     getNews,
-    getNewsById
+    getNewsById,
+    getNewsNotice
 }
