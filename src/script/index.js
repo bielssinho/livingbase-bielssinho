@@ -5,6 +5,7 @@ const renderList = async () =>{
     const listPost = await getNews()
     console.log(listPost)
     const ul = document.querySelector(".list-post");
+    const section = document.querySelector(".posts");
 
     ul.innerHTML = "";
     // <li class="post">
@@ -43,7 +44,7 @@ const renderList = async () =>{
     });
     const divObserver = document.createElement("div");
     divObserver.classList.add("observer")
-    ul.append(divObserver)
+    section.append(divObserver)
     
     observer.observe(divObserver);
 }
