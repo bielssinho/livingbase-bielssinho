@@ -1,4 +1,4 @@
-import { renderList } from "./index.js";
+
 import { getNewsNotice } from "./request.js";
 
 const renderNewNoticeFilter = async (filter) => {
@@ -7,7 +7,7 @@ const renderNewNoticeFilter = async (filter) => {
     const ul = document.querySelector(".list-post");
 
     
-
+    ul.innerHTML = ""
     if(dados.nextPage <= 3){
         dados.news.forEach(element => {
             if(filter == "Todos"){

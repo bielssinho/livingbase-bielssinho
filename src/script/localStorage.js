@@ -3,3 +3,9 @@ export function getLocalStorage(){
 
     return user
 }
+
+export const getLocalStorageButton = () => {
+    const button = JSON.parse(localStorage.getItem("@botao:"));
+
+    return button 
+}
