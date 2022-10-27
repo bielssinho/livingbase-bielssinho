@@ -20,3 +20,20 @@ const renderPost = async () => {
 }
 
 renderPost()
+
+const eventFilterPost = async () => {
+    const botoes = document.querySelectorAll(".btn-filter");
+
+    botoes.forEach(botao => {
+        botao.addEventListener("click", (e) => {
+            e.preventDefault()
+            
+            localStorage.setItem("@botao:",JSON.stringify(`${botao.value}`))
+            setTimeout(() => {
+                window.location.replace("../../index.html");
+            },2000)
+        })
+    })
+}
+
+eventFilterPost()

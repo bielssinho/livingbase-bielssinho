@@ -1,6 +1,7 @@
 import { getNews } from "./request.js";
 import  observer  from "./observerScroll.js";
 import { renderNewNoticeFilter } from "./filter.js";
+import { getLocalStorageButton } from "./localStorage.js";
 
 
 const renderList = async () =>{
@@ -8,6 +9,7 @@ const renderList = async () =>{
     
     const ul = document.querySelector(".list-post");
     const section = document.querySelector(".posts");
+    const footer = document.querySelector(".description-footer")
 
     ul.innerHTML = "";
     // <li class="post">
@@ -46,7 +48,7 @@ const renderList = async () =>{
     });
     const divObserver = document.createElement("div");
     divObserver.classList.add("observer")
-    section.append(divObserver)
+    footer.append(divObserver)
     
     observer.observe(divObserver);
 }
@@ -62,6 +64,8 @@ const eventFilter = async () => {
             ul.innerHTML = "";
 
             const valueBotao = botao.value
+            localStorage.setItem("@botao:",valueBotao)
+            console.log(valueBotao)
             renderNewNoticeFilter(valueBotao)
         })
         
@@ -70,6 +74,24 @@ const eventFilter = async () => {
 }
 
 eventFilter()
+
+const filterByPostArea = () => {
+    const filter = getLocalStorageButton()
+    console.log(filter)
+    const botoes = document.querySelectorAll(".btn-filter");
+    
+    botoes.forEach(botao => {
+        console.log(botao.value)
+        if(botao.value == filter){
+            
+            botao.click();
+
+            renderNewNoticeFilter(botao.value)
+        }
+    })
+}
+
+filterByPostArea()
 
 export{
     renderList
