@@ -1,9 +1,11 @@
 import { getNews } from "./request.js";
 import  observer  from "./observerScroll.js";
+import { renderNewNoticeFilter } from "./filter.js";
+
 
 const renderList = async () =>{
     const listPost = await getNews()
-    console.log(listPost)
+    
     const ul = document.querySelector(".list-post");
     const section = document.querySelector(".posts");
 
@@ -50,3 +52,25 @@ const renderList = async () =>{
 }
 renderList()
 
+const eventFilter = async () => {
+    const botoes = document.querySelectorAll(".btn-filter");
+
+    botoes.forEach(botao => {
+        botao.addEventListener("click", (e) => {
+            e.preventDefault()
+            const ul = document.querySelector(".list-post");
+            ul.innerHTML = "";
+
+            const valueBotao = botao.value
+            renderNewNoticeFilter(valueBotao)
+        })
+        
+        
+    })
+}
+
+eventFilter()
+
+export{
+    renderList
+}
